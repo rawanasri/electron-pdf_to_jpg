@@ -1,0 +1,16 @@
+{
+  "name": "pdf_to_jpg-electron",
+  "version": "1.0.0",
+  "description": "App that takes pdf file as an input and converts it to png or jpg file formats.",
+  "license": "MIT",
+  "author": "RawanaSri",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "electron run",
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^35.0.2"
+  }
+}
