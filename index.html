@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PDF to JPG</title>
-    <link href="styles.css" rel="stylesheet">
-    <link href="css/bulma.css" rel="stylesheet">
-    <script src="JavaScript/functions.js" defer></script>
-  </head>
+  
   <body>
     <div class="selection-buttons">
-     <input class="button is-dark" type="file" name="Choose Files" value="Choose Files"> 
+     <input id="file-chooser" class="button is-dark" type="file" name="Choose Files" value="Choose Files"> 
     </div>
     <div class="file-pages">
       <input type="checkbox" name="first-page-only" value="first-page-only" checked>
@@ -27,4 +18,3 @@
       <button type="submit" class="button is-dark">Convert</button>
     </div>
   </body>
-</html>
