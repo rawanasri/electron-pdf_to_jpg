@@ -5,3 +5,27 @@
   align-items: center;
   flex-direction: row;
 }
+
+.file-pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.file-pages > input {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.format-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.format-choice > label {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}

@@ -9,7 +9,21 @@
   </head>
   <body>
     <div class="selection-buttons">
-     <div class="icon-chosen is-dark"><input class="button is-dark" type="file" name="Choose Files" value="Choose Files"></div> 
+     <input class="button is-dark" type="file" name="Choose Files" value="Choose Files"> 
+    </div>
+    <div class="file-pages">
+      <input type="checkbox" name="first-page-only" value="first-page-only" checked>
+      <label for="first-page-only">First Page Only</label>
+    </div>
+    <div class="format-choice">
+    <label for="format">Choose Format :</label>
+    <select for="format">
+      <option value="jpg">JPG</option>
+      <option value="png">PNG</option>
+    </select>
+    </div>
+    <div class="convert-button">
+      <button type="submit">Convert</button>
     </div>
   </body>
 </html>
