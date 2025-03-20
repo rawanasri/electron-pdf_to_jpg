@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+import { app, BrowserWindow, ipcMain, dialog } from 'electron'
 
 const createWindow = () => {
   const win = new BrowserWindow({
