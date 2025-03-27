@@ -1,3 +1,4 @@
+import create from "./script.js"
 import { app, BrowserWindow, ipcMain, dialog } from 'electron';
 
 const createWindow = () => {
@@ -13,3 +14,4 @@ const createWindow = () => {
 app.whenReady().then(() => {
   createWindow()
 })
+

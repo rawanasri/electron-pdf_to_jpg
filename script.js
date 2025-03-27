@@ -1,14 +1,8 @@
-import { ipcRenderer } from "elctron";
+import * as nodeConsole from "console"
 
-let fileChooser = document.getElementById('file-chooser');
+var myConsole = new nodeConsole.Console(process.stdout, process.stderr)
 
-fileChooser.addEventListener('change', () => {
-  ipcRenderer.send('open-file-dialog')
-})
-
-ipcRenderer.on('selected-file', (event, filePath) => {
-  console.log(filePath)
-  fileChooser.value = filePath;
-})
-
+export default function create() {
+  
+}
 

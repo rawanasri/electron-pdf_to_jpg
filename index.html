@@ -6,7 +6,6 @@
     <title></title>
     <link href="styles.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bulma.css">
-    <script src="script.js" type="module" defer></script>
   </head>
   <body>
     <div class="selection-buttons">
@@ -26,6 +25,19 @@
     <div class="convert-button">
       <button type="submit" class="button is-dark">Convert</button>
     </div>
+    <div>
+      <p class="file-name"></p>
+    </div>
+    <script>
+      let fileName = document.querySelector('.file-name')
+      fileName.style.color = "white"
+      fileName.style.fontSize = "30px"
+      fileName.textContent = 'uud'
+      let fileChooser = document.querySelector('#file-chooser').addEventListener('change', (event) => {
+        const filePath = event.target.files[0].path
+        fileName.textContent = `${filePath}`
+      })
+    </script>
   </body>
  </html> 
   <body>
