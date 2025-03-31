@@ -6,10 +6,11 @@
     <title></title>
     <link href="styles.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bulma.css">
+    <script src="renderer.js" defer></script>
   </head>
   <body>
     <div class="selection-buttons">
-     <input id="file-chooser" class="button is-dark" type="file" name="Choose Files" value="Choose Files"> 
+     <input id="fileChooser" class="button is-dark" type="file" name="Choose Files" value="Choose Files"> 
     </div>
     <div class="file-pages">
       <input type="checkbox" name="first-page-only" value="first-page-only" checked>
@@ -23,21 +24,20 @@
     </select>
     </div>
     <div class="convert-button">
-      <button type="submit" class="button is-dark">Convert</button>
+      <button type="submit" class="button is-dark" id="conversionButton">Convert</button>
     </div>
     <div>
-      <p class="file-name"></p>
+      <p class="file-name" id="fileName"></p>
     </div>
-    <script>
-      let fileName = document.querySelector('.file-name')
-      fileName.style.color = "white"
-      fileName.style.fontSize = "30px"
-      fileName.textContent = 'uud'
-      let fileChooser = document.querySelector('#file-chooser').addEventListener('change', (event) => {
-        const filePath = event.target.files[0].path
-        fileName.textContent = `${filePath}`
-      })
-    </script>
+    <!--<script>-->
+    <!--  let button = document.getElementById('conversionButton')-->
+    <!--  let fileChooser = document.getElementById('fileChooser')-->
+    <!--  let fileName = document.getElementById('fileName')-->
+    <!---->
+    <!--  fileChooser.addEventListener('change', () => {-->
+    <!--    button.style.backgroundColor = 'red'-->
+    <!--  })-->
+    <!--</script>-->
   </body>
  </html> 
   <body>

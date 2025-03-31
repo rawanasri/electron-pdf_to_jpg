@@ -1,5 +1,4 @@
-import create from "./script.js"
-import { app, BrowserWindow, ipcMain, dialog } from 'electron';
+import { app, BrowserWindow } from 'electron';
 
 const createWindow = () => {
   const win = new BrowserWindow({
