@@ -2,12 +2,12 @@ import { app, BrowserWindow } from 'electron';
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    menu: null,
-    width: 500,
-    height: 300
+    width: 450,
+    height: 250
     })
 
   win.loadFile('index.html')
+  win.setMenuBarVisibility(false)
 }
 
 app.whenReady().then(() => {
