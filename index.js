@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain } from 'electron';
+import { app, BrowserWindow, ipcMain, dialog } from 'electron';
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -10,12 +10,20 @@ const createWindow = () => {
   win.setMenuBarVisibility(false)
 }
 
+ipcMain.on('open-file-dialog', (e) => {
+  dialog.showOpenDialog(win, {
+    properties: ['openFile']
+  }).then(result => {
+    if (!result.canceled) {
+      event.reply('file-path-response', result.filePaths[0])
+    }
+  }).catch(err => {
+    console.log('Error opening file Dialog', err)
+  })
+});
+
 app.whenReady().then(() => {
   createWindow()
-})
-
-ipcMain.on('selected-file', (event, filePath) => {
-  console.log(`path : ${filePath}`)
 });
 
 app.on('window-all-closed', () => {
