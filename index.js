@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -14,3 +14,12 @@ app.whenReady().then(() => {
   createWindow()
 })
 
+ipcMain.on('selected-file', (event, filePath) => {
+  console.log(`path : ${filePath}`)
+});
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
