@@ -1,9 +1,11 @@
 import { app, BrowserWindow, ipcMain, dialog } from 'electron';
 
+let isDev = true;
+
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 450,
-    height: 250,
+    width: isDev ? 1300 :450,
+    height: isDev ? 850 : 250,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: false

@@ -1,4 +1,3 @@
-const { ipcRenderer } = require('electron')
 
 let fileChooser = document.getElementById('fileChooser')
 let convertButton = document.getElementById('conversionButton')
@@ -8,8 +7,16 @@ fileChooser.addEventListener('change', () => {
   convertButton.disabled = false
 })
 
-//ipcRenderer.on('file-path-response', (event, path) =>   {
-//  console.log((`File Path : ${path}`))
-//})
-//
-//ipcRenderer.send('open-file-dialog')
+convertButton.addEventListener('click', () => {
+  
+  console.log('xax')
+
+  //import { ipcRenderer } from "electron";
+  //
+  //ipcRenderer.on('file-path-response', (event, path) =>   {
+  //  console.log((`File Path : ${path}`))
+  //})
+  //
+  //ipcRenderer.send('open-file-dialog')
+
+})
