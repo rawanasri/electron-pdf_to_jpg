@@ -9,6 +9,7 @@ const createWindow = () => {
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: false
+      preload: path.join(__dirname, 'preload.js')
     }
     })
 
@@ -16,7 +17,6 @@ const createWindow = () => {
   win.setMenuBarVisibility(false)
 
   ipcMain.on('open-file-dialog', (e) => {
-    console.log('xxeie')
     dialog.showOpenDialog(win, {
       properties: ['openFile']
     }).then((result) => {
