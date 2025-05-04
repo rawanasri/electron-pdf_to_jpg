@@ -8,15 +8,5 @@ fileChooser.addEventListener('change', () => {
 })
 
 convertButton.addEventListener('click', () => {
-  
-  console.log('xax')
-
-  //import { ipcRenderer } from "electron";
-  //
-  //ipcRenderer.on('file-path-response', (event, path) =>   {
-  //  console.log((`File Path : ${path}`))
-  //})
-  //
-  //ipcRenderer.send('open-file-dialog')
-
+  window.api.sendConvertClick()
 })

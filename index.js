@@ -1,4 +1,6 @@
-import { app, BrowserWindow, ipcMain, dialog } from 'electron';
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
+const { preload } = require('./preload.js')
+const path = require('path')
 
 let isDev = true;
 
@@ -8,7 +10,7 @@ const createWindow = () => {
     height: isDev ? 850 : 250,
     webPreferences: {
       nodeIntegration: false,
-      contextIsolation: false
+      contextIsolation: true,
       preload: path.join(__dirname, 'preload.js')
     }
     })
@@ -16,18 +18,8 @@ const createWindow = () => {
   win.loadFile('index.html')
   win.setMenuBarVisibility(false)
 
-  ipcMain.on('open-file-dialog', (e) => {
-    dialog.showOpenDialog(win, {
-      properties: ['openFile']
-    }).then((result) => {
-      if (!result.canceled) {
-        const filePath = result.filePaths[0]
-        console.log('file Path :', filePath)
-        e.sender.send('file-path-response', filePath)
-      }
-    }).catch((err) => {
-      console.log('Error opening file Dialog', err)
-    })
+  ipcMain.on('convert-button-clicked', (event) => {
+    console.log('Convert Button Clicked !')
   });
 }
 

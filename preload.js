@@ -1,5 +1,5 @@
-import { contextBridge, ipcRenderer } from "electron"
+const { contextBridge, ipcRenderer } = require('electron')
 
-contextBridge.exposeInMainWorld('call', {
-  consoleLogs: () => ipcRenderer.invoke('success')
+contextBridge.exposeInMainWorld('api', {
+  sendConvertClick: () => ipcRenderer.send('convert-button-clicked')
 })

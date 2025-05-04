@@ -4,7 +4,6 @@
   "description": "App that takes pdf file as an input and converts it to png or jpg file formats.",
   "license": "MIT",
   "author": "RawanaSri",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "electron run",
